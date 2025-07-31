@@ -4,7 +4,7 @@ import pandas as pd
 import plotly.express as px
 
 # Carregar dados
-df = pd.read_excel("controle OAE - atualizado.xlsx")
+df = pd.read_excel("controle OAE.xlsx")
 
 # Filtros
 st.title("Dashboard de Inspeção de OAEs")
