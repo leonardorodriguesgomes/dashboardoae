@@ -14,8 +14,8 @@ rodovia = st.sidebar.multiselect("Rodovia", df["RODOVIA"].dropna().unique())
 km = st.sidebar.multiselect("KM + M", df["KM + M"].dropna().unique())
 sentido = st.sidebar.multiselect("Sentido", df["SENTIDO"].dropna().unique())
 coluna_nota = st.sidebar.selectbox("Tipo de Nota", ["Estrutural", "Funcional", "Durabilidade", "Nota Geral"])
-notas_disponiveis = df[coluna_nota].dropna().unique()
-nota_filtro = st.sidebar.multiselect("Filtrar por Nota", sorted(notas_disponiveis))
+notas_disponiveis = sorted([n for n in df[coluna_nota].dropna().unique() if isinstance(n, str)])
+nota_filtro = st.sidebar.multiselect("Filtrar por Nota", notas_disponiveis)
 
 # Aplicar filtros
 df_filtrado = df.copy()
