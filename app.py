@@ -4,7 +4,7 @@ import pandas as pd
 import plotly.express as px
 
 # Carregar dados
-df = pd.read_excel("controle OAE - atualizado.xlsx")
+df = pd.read_excel("controle OAE.xlsx")
 
 # Extrair ano da próxima intervenção
 df["Ano Intervenção"] = pd.to_datetime(df["Proxima Intervenção"], errors='coerce').dt.year
